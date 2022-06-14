@@ -1,0 +1,28 @@
+﻿@model AlisverisProje.Entities.Category
+
+@{
+    ViewData["Title"] = "Silme İşlemi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Silme İşlemi</h1>
+
+<h3>Bu kategoriyi silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Kategori</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sil" class="btn btn-danger Mt10" /> |
+        <a asp-action="Index">Kategori Listesine Geri Dön</a>
+    </form>
+</div>
