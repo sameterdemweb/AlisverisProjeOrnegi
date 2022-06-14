@@ -12,6 +12,7 @@ namespace AlisverisProje.Models
 
         [Display(Name = "Telefon Numaranız")]
         [Required]
+        [DataType(DataType.PhoneNumber)]
         public string Telefon { get; set; }
 
         [Display(Name = "Mail Adresi")]
@@ -25,6 +26,7 @@ namespace AlisverisProje.Models
 
         [Display(Name = "Mesajınız")]
         [Required]
+        [DataType(DataType.MultilineText)]
         public string Mesaj { get; set; }
     }
 }

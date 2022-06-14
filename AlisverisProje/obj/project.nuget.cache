@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "igFovL3+nCuLTNdc5F0R4WUFlKw/0uDBhb7EF+F0CEaYW0pb23XqJkSzvMShzINg78OEJUu1XSjVKZs310gNJg==",
+  "dgSpecHash": "tnm8OQIGl/g2Mrfncjpw+y7agqUJI4j3XP6wIHw9peh5EJF/a+gz5uG0FTnKraykeFqbO3mFzCD3DV5/WbaAKg==",
   "success": true,
-  "projectFilePath": "E:\\EgitimOrnek\\AlisverisProje\\AlisverisProje\\AlisverisProje.csproj",
+  "projectFilePath": "E:\\EgitimOrnek\\AlisverisProjeOrnegi\\AlisverisProje\\AlisverisProje.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Notebook\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Notebook\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

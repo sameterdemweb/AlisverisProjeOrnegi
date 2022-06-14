@@ -30,8 +30,9 @@ namespace AlisverisProje.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CategoryName")
-                        .HasColumnType("int");
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -46,9 +47,8 @@ namespace AlisverisProje.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Age")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
 
                     b.Property<string>("City")
                         .IsRequired()

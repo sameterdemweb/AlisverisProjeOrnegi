@@ -26,6 +26,8 @@
                 @Html.DisplayFor(modelItem => item.CategoryName)
             </td>
             <td>
+             <a href="/Manuel/Index?CategoryId=@item.Id" ><img src="~/img/product.png" style="width:40px;" title="Ürünler" /></a>
+                 <!-- <a asp-controller="Product" asp-action="Index" asp-route-id="@item.Id"><img src="~/img/product.png" style="width:40px;" title="Ürünler" /></a> |-->
                 <a asp-action="Edit" asp-route-id="@item.Id"><img src="~/img/Update.svg" style="width:40px;" title="Güncelle" /></a> |
                 <a asp-action="Details" asp-route-id="@item.Id"><img src="~/img/Detail.svg" style="width:40px;"  title="Detay" /></a> |
                 <a asp-action="Delete" asp-route-id="@item.Id"><img src="~/img/Remove.svg" style="width:40px;"  title="Sil" /></a>

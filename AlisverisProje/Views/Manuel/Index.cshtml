@@ -1,0 +1,38 @@
+﻿
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Ürünler</h1>
+
+
+<h4>Ürün Ekleme</h4>
+<hr />
+<div class="row">
+  <a asp-action="Add">Yeni Ürün Ekle</a>
+</div>
+
+
+<div class="row">
+    <table>
+        <thead>
+            <tr>
+                <th>Kategori</th>
+                <th>Ürün Adı</th>
+                <th>Fiyat</th>
+                <th>Stok</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+               <tr>
+                <td>@item.</td>
+                <td>Ürün Adı</td>
+                <td>Fiyat</td>
+                <td>Stok</td>
+            </tr>
+        }
+    </table>
+</div>

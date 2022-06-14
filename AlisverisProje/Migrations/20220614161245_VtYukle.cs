@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AlisverisProje.Migrations
 {
-    public partial class VtilkYukleme : Migration
+    public partial class VtYukle : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,7 @@ namespace AlisverisProje.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryName = table.Column<int>(type: "int", nullable: false)
+                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -29,7 +29,7 @@ namespace AlisverisProje.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Age = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Age = table.Column<int>(type: "int", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -66,9 +66,9 @@ namespace AlisverisProje.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CustomerId = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false)
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
