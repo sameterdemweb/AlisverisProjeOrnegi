@@ -13,6 +13,6 @@ namespace AlisverisProje.Entities
 
         [Display(Name ="Kategori Adı")]
         public string CategoryName { get; set; }
-        public List<Product> Product { get; set; } //Bir kategorinin birden fazla ürüne ait olabileceği için tanımlıyoruz.
+        public virtual List<Product> Product { get; set; } //Bir kategorinin birden fazla ürüne ait olabileceği için tanımlıyoruz.
     }
 }

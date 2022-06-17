@@ -10,9 +10,9 @@ namespace AlisverisProje.Entities
         [Display(Name = "Ürün")]
         public int ProductId { get; set; }
         [Display(Name = "Sipariş Tarihi")]
-        public DateTime OrderDate { get; set; }
-        public Customer Customer { get; set; } //Bir siparişin bir müşterisi olabilir mantığıyla burda müşteriyi tanımladık.
-        public Product Product { get; set; } //Bir siparişin bir müşterisi olabilir mantığıyla burda müşteriyi tanımladık.
+        public  DateTime OrderDate { get; set; }
+        public virtual Customer Customer { get; set; } //Bir siparişin bir müşterisi olabilir mantığıyla burda müşteriyi tanımladık.
+        public virtual Product Product { get; set; } //Bir siparişin bir müşterisi olabilir mantığıyla burda müşteriyi tanımladık.
 
     }
 }

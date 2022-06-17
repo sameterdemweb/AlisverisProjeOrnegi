@@ -18,8 +18,8 @@ namespace AlisverisProje.Entities
         public decimal Price { get; set; }
         [Display(Name = "Stok Bilgisi")]
         public decimal Stock { get; set; }
-        public Category Category { get; set; }//Bir ürünün bir kategorisi olabilir mantığıyla burda müşteriyi tanımladık.
-        public List<Order> Orders { get; set; } //Bir Ürün birden fazla siparişi olabileceği için tanımlıyoruz.
+        public virtual Category Category { get; set; }//Bir ürünün bir kategorisi olabilir mantığıyla burda müşteriyi tanımladık.
+        public virtual List<Order> Orders { get; set; } //Bir Ürün birden fazla siparişi olabileceği için tanımlıyoruz.
 
 
     }

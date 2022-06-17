@@ -17,6 +17,6 @@ namespace AlisverisProje.Entities
         public string City { get; set; }
         [Display(Name = "Ülke")]
         public string Country { get; set; }
-        public List<Order> Orders { get; set; } //Bir müşterinin birden fazla siparişi olabileceği için tanımlıyoruz.
+        public virtual List<Order> Orders { get; set; } //Bir müşterinin birden fazla siparişi olabileceği için tanımlıyoruz.
     }
 }
