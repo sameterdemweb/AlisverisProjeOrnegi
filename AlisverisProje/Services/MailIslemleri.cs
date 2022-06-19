@@ -1,12 +1,11 @@
-﻿
-using System.Net.Mail;//Mail Gönderme işlemi için Bu kütüphane Eklenmesi Gerekiyor.
+﻿using System.Net.Mail;
 
 namespace AlisverisProje.Services
 {
-    public class MailGonderme
+    public class MailIslemleri
     {
 
-        public static void MailGondermeIslemi(string icerik)
+        public static void MailGonderme(string icerik, string konu)
         {
             SmtpClient smtp = new SmtpClient(); // smtp nesnesi oluşturuyoruz
             /*
@@ -29,7 +28,7 @@ namespace AlisverisProje.Services
             eposta.To.Add("furkanozden_1998@hotmail.com, gamzearici46@gmail.com, 4973443@gmail.com, ferhat.khyaa@gmail.com,mehmet59850@gmail.com, smt.e.59@gmail.com");
             // eposta.CC.Add("ism3@mail3.com, isim4@mail4.com"); // Bilgi maili gönerilecek kişileri CC özelliğine ekle
             //eposta.Bcc.Add("isim5@mail5.com"); // Gizli alıcıları bcc özelliğine ekle
-            eposta.Subject = "İletişim Formu Mesaj"; // Mail konusunu subject özelliğine ekle
+            eposta.Subject = konu; // Mail konusunu subject özelliğine ekle
             eposta.Body = icerik; // mesaj içeriğini body özelliğine ekle
                                   // ekleri dosya yolu ile birlikte bir string dizisinde tutuyoruz
 
@@ -42,5 +41,6 @@ namespace AlisverisProje.Services
                 string hata = "Mail gönderilirkene bir hata ile karşılaşıldı: " + ex.Message; // Hatayı kullanıcıya bildir
             }
         }
+
     }
 }

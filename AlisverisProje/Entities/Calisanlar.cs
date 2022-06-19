@@ -15,6 +15,8 @@ namespace AlisverisProje.Entities
 
         [StringLength(40), Required]// Maksimum 40 karakter ve boş geçilemez olduğunu belirttik
         public string Soyad { get; set; }
+
+        public int Yas { get; set; }
         public virtual List<Adresler> Adresler { get; set; }
     }
 }

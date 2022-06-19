@@ -59,7 +59,7 @@ namespace AlisverisProje.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,CategoryId,ProductName,Price,Stock")] Product product)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(product);
                 await _context.SaveChangesAsync();
@@ -98,7 +98,7 @@ namespace AlisverisProje.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {

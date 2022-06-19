@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\EgitimOrnek\\AlisverisProjeOrnegi\\AlisverisProje\\AlisverisProje.csproj": {}
+    "D:\\AspNet\\AlisverisProjeOrnegi\\AlisverisProje\\AlisverisProje.csproj": {}
   },
   "projects": {
-    "E:\\EgitimOrnek\\AlisverisProjeOrnegi\\AlisverisProje\\AlisverisProje.csproj": {
+    "D:\\AspNet\\AlisverisProjeOrnegi\\AlisverisProje\\AlisverisProje.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\EgitimOrnek\\AlisverisProjeOrnegi\\AlisverisProje\\AlisverisProje.csproj",
+        "projectUniqueName": "D:\\AspNet\\AlisverisProjeOrnegi\\AlisverisProje\\AlisverisProje.csproj",
         "projectName": "AlisverisProje",
-        "projectPath": "E:\\EgitimOrnek\\AlisverisProjeOrnegi\\AlisverisProje\\AlisverisProje.csproj",
+        "projectPath": "D:\\AspNet\\AlisverisProjeOrnegi\\AlisverisProje\\AlisverisProje.csproj",
         "packagesPath": "C:\\Users\\Notebook\\.nuget\\packages\\",
-        "outputPath": "E:\\EgitimOrnek\\AlisverisProjeOrnegi\\AlisverisProje\\obj\\",
+        "outputPath": "D:\\AspNet\\AlisverisProjeOrnegi\\AlisverisProje\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,13 +44,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "EntityFramework": {
-              "target": "Package",
-              "version": "[6.4.4, )"
-            },
             "FakeData": {
               "target": "Package",
               "version": "[1.0.0, )"
+            },
+            "Microsoft.AspNet.Identity.EntityFramework": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -85,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

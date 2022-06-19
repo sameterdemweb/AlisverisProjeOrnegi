@@ -1,4 +1,5 @@
 ﻿using AlisverisProje.Entities;
+using FakeData;
 
 using AlisverisProje.Models;
 
@@ -24,19 +25,44 @@ namespace AlisverisProje.Models
 
         public DbSet<Calisanlar> Calisanlar { get; set; }
         public DbSet<Adresler> Adresler { get; set; }
+        
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+
+
+
+ 
+      
+        protected override void OnModelCreating(ModelBuilder modelBuilder) //Model oluşturulmadan önce override ile ilgili methodu eziyoruz.
         {
-            modelBuilder.Entity<Adresler>().HasData(
-                    new Calisanlar
-                    {
-                        Id = 1,
-                        Ad = "Samet",
-                        Soyad = "Erdem"
-                    }
+            base.OnModelCreating(modelBuilder);
+            new DbInitializer(modelBuilder).Seed();//Seed methodunu çağırarak içerisinde oluşturduğumuz örnek dataları oluşturma anında veritabanına ekleme işlemini gerçekleştiriyoruz.
+        }
+     
+
+    }
+
+    public class DbInitializer
+    {
+        private readonly ModelBuilder modelBuilder;
+
+        public DbInitializer(ModelBuilder modelBuilder)
+        {
+            this.modelBuilder = modelBuilder;
+        }
+
+        public void Seed()//Bu method altında istediğimiz tablolara istediğimiz dataları atabiliriz artık.
+        {
+            for (int i = 1; i < 11; i++)
+            {
+                modelBuilder.Entity<Calisanlar>().HasData(
+                  new Calisanlar {Id=i, Ad = FakeData.NameData.GetFirstName(), Soyad = FakeData.NameData.GetSurname(), Yas = FakeData.NumberData.GetNumber(10, 90) }
                 );
+            }
+
+
         }
     }
-}
  
+
+}
 

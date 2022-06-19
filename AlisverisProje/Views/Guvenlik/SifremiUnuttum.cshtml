@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "SifremiUnuttum";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>SifremiUnuttum</h1>
+<h4>Şifre Sıfırlama İşlemi</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Guvenlik" asp-action="SifremiUnuttum" method="Post">
+            <div asp-validation-summary="All"> </div>
+            <div class="form-group">
+         
+                <input type="text" name="mail" id="mail" placeholder="E-Mail Giriniz"/>
+          
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Şifre Sıfırla" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Geri Dön</a>
+</div>
+
