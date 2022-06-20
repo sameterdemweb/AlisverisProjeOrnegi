@@ -7,14 +7,15 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AlisverisProje.Entities;
 using AlisverisProje.Models;
+using AlisverisProje.Identity;
 
 namespace AlisverisProje.Controllers
 {
     public class CategoriesController : Controller
     {
-        private readonly AlisverisOrnekDBContext _context;
+        private readonly AppIdentityDbContext _context;
 
-        public CategoriesController(AlisverisOrnekDBContext context)
+        public CategoriesController(AppIdentityDbContext context)
         {
             _context = context;
         }
@@ -24,7 +25,7 @@ namespace AlisverisProje.Controllers
         {
               return _context.Categories != null ? 
                           View(await _context.Categories.ToListAsync()) :
-                          Problem("Entity set 'AlisverisOrnekDBContext.Categories'  is null.");
+                          Problem("Entity set 'AppIdentityDbContext.Categories'  is null.");
         }
 
         // GET: Categories/Details/5
@@ -143,7 +144,7 @@ namespace AlisverisProje.Controllers
         {
             if (_context.Categories == null)
             {
-                return Problem("Entity set 'AlisverisOrnekDBContext.Categories'  is null.");
+                return Problem("Entity set 'AppIdentityDbContext.Categories'  is null.");
             }
             var category = await _context.Categories.FindAsync(id);
             if (category != null)

@@ -7,14 +7,15 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AlisverisProje.Entities;
 using AlisverisProje.Models;
+using AlisverisProje.Identity;
 
 namespace AlisverisProje.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly AlisverisOrnekDBContext _context;
+        private readonly AppIdentityDbContext _context;
 
-        public ProductController(AlisverisOrnekDBContext context)
+        public ProductController(AppIdentityDbContext context)
         {
             _context = context;
         }
@@ -22,8 +23,8 @@ namespace AlisverisProje.Controllers
         // GET: Product
         public async Task<IActionResult> Index()
         {
-            var alisverisOrnekDBContext = _context.Products.Include(p => p.Category);
-            return View(await alisverisOrnekDBContext.ToListAsync());
+            var AppIdentityDbContext = _context.Products.Include(p => p.Category);
+            return View(await AppIdentityDbContext.ToListAsync());
         }
 
         // GET: Product/Details/5
@@ -148,7 +149,7 @@ namespace AlisverisProje.Controllers
         {
             if (_context.Products == null)
             {
-                return Problem("Entity set 'AlisverisOrnekDBContext.Products'  is null.");
+                return Problem("Entity set 'AppIdentityDbContext.Products'  is null.");
             }
             var product = await _context.Products.FindAsync(id);
             if (product != null)

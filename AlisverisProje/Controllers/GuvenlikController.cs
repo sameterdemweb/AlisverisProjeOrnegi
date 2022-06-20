@@ -67,7 +67,7 @@ namespace AlisverisProje.Controllers
 
                     if (sonuc.Succeeded)//Eğer kullanıcı var ise
                     {
-                        return RedirectToAction("Index", "Musteri");
+                        return RedirectToAction("Index", "Order");
                     }
 
 
@@ -130,15 +130,19 @@ namespace AlisverisProje.Controllers
                 var kodBilgisi = _userManager.GenerateEmailConfirmationTokenAsync(kullanici); //Doğrulama kodu oluşturduk.
                 var DonusUrl = Url.Action("MailOnayla", "Guvenlik", new { userId = kullanici.Id, code = kodBilgisi.Result }); //Dönüş URL Tanımlıyoruz ilgili method, controler ve nesne istediği için ilgili nesneyi gönderdik. 
 
+                // /Guvenlik/MailOnayla?userId=12312.123123.1241.51251.2123&code=123128db127812badg8712gds8dg18dbgs871g
+
+
+                string MailIcerik = "Web sitemize üye olduğunuz için teşekkür ederiz. Üyelik işlemlerinizi onaylamak için ilgili linke tıklayınız. https://localhost:7130"+ DonusUrl;
 
                 #region Email Gönderme işlemi yapıLAcak ve DonusUrl gönderilecek.
                 //Mail Gönderme! işlemi burada yapılacak.! // EMAİL SAĞLAYICI KULLANIMI GEREKLİ
 
-                MailIslemleri.MailGonderme(DonusUrl, "Üye Aktivasyon");
+                MailIslemleri.MailGonderme(MailIcerik, "Üye Aktivasyon" ,kullanici.Email);
 
                 #endregion
 
-                return RedirectToAction("Giris", "Guvenlik");
+                return RedirectToAction("UyelikOnaylamaYapmalisiniz", "Guvenlik");
 
             }
             else
@@ -150,6 +154,16 @@ namespace AlisverisProje.Controllers
         }
 
         #endregion
+
+        public IActionResult UyelikOnaylamaYapmalisiniz()
+        {
+
+            return View();
+        }
+
+
+
+
 
         #region Mail Onaylama ConfirmMail
 
@@ -206,8 +220,9 @@ namespace AlisverisProje.Controllers
 
             #region Email Gönderme işlemi yapıLAcak ve DonusUrl gönderilecek.
             //Mail Gönderme Kodları  // EMAİL SAĞLAYICI KULLANIMI GEREKLİ
+            string MailIcerik = "Üyelik şifrenizi sıfırlamak için ilgili linke tıklayınız. https://localhost:7130" + DonusUrl;
 
-            MailIslemleri.MailGonderme(DonusUrl, "Şifre Sıfırlama");
+            MailIslemleri.MailGonderme(MailIcerik, "Şifre Sıfırlama", kullanici.Email);
 
             #endregion
 

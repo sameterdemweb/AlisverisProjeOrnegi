@@ -23,7 +23,7 @@ namespace AlisverisProje.Controllers
             string icerik = "İletişim Formundan Mesajınız Var: Formu Gönderen: " + iletisimForm.AdinizSoyadiniz + " Formu Gönderen Telefon Bilgisi: " + iletisimForm.Telefon + " Formu Gönderen Mail Adresi: " + iletisimForm.Mail + " Konu: " + iletisimForm.Konu + " Mesaj: " + iletisimForm.Mesaj + " ";
 
             #region Kurumsal Mail Atma İşlemi
-                MailIslemleri.MailGonderme(icerik,"İletişim Sayfasından Mail Gönderildi");
+                MailIslemleri.MailGonderme(icerik,"İletişim Sayfasından Mail Gönderildi","smt.e.59@gmail.com");
             #endregion
 
 

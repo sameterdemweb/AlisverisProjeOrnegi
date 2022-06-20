@@ -7,14 +7,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AlisverisProje.Entities;
 using AlisverisProje.Models;
-
+using AlisverisProje.Identity;
 namespace AlisverisProje.Controllers
 {
     public class CustomerController : Controller
     {
-        private readonly AlisverisOrnekDBContext _context;
+        private readonly AppIdentityDbContext _context;
 
-        public CustomerController(AlisverisOrnekDBContext context)
+        public CustomerController(AppIdentityDbContext context)
         {
             _context = context;
         }
@@ -24,7 +24,7 @@ namespace AlisverisProje.Controllers
         {
               return _context.Customers != null ? 
                           View(await _context.Customers.ToListAsync()) :
-                          Problem("Entity set 'AlisverisOrnekDBContext.Customers'  is null.");
+                          Problem("Entity set 'AppIdentityDbContext.Customers'  is null.");
         }
 
         // GET: Customer/Details/5
@@ -143,7 +143,7 @@ namespace AlisverisProje.Controllers
         {
             if (_context.Customers == null)
             {
-                return Problem("Entity set 'AlisverisOrnekDBContext.Customers'  is null.");
+                return Problem("Entity set 'AppIdentityDbContext.Customers'  is null.");
             }
             var customer = await _context.Customers.FindAsync(id);
             if (customer != null)

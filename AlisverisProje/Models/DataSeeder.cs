@@ -1,12 +1,12 @@
 ﻿using AlisverisProje.Entities;
-
+using AlisverisProje.Identity;
 namespace AlisverisProje.Models
 {
     public class DataSeeder
     {
-        private readonly AlisverisOrnekDBContext _context;
+        private readonly AppIdentityDbContext _context;
 
-        public DataSeeder(AlisverisOrnekDBContext context)
+        public DataSeeder(AppIdentityDbContext context)
         {
             this._context = context;
         }

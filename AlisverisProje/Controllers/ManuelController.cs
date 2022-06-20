@@ -1,14 +1,14 @@
 ﻿using AlisverisProje.Entities;
 using AlisverisProje.Models;
 using Microsoft.AspNetCore.Mvc;
-
+using AlisverisProje.Identity;
 namespace AlisverisProje.Controllers
 {
     public class ManuelController : Controller
     {
-        private readonly AlisverisOrnekDBContext _context;
+        private readonly AppIdentityDbContext _context;
 
-        public ManuelController(AlisverisOrnekDBContext context)
+        public ManuelController(AppIdentityDbContext context)
         {
             _context = context;
         }

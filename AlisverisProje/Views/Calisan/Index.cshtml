@@ -1,0 +1,29 @@
+﻿@model AlisverisProje.CalisanIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ <div class="row">
+         <div class="col-md-6">
+            <h1>Çalışanlar</h2>
+                @Html.ActionLink("Yeni Ekle","CalisanEkle","Calisan",null, new { @class="btn btn-primary"})
+                <br />
+            <ul class="list-group mt">
+                 @foreach (var calisan in Model.Calisanlar)
+                 {
+                      <li class="list-group-item"><span class=""></span> @calisan.Ad @calisan.Soyad</li>
+                 }
+            </ul>
+         </div>
+         <div class="col-md-6">
+            <h1>Adresler</h2>  
+                @Html.ActionLink("Yeni Ekle","AdresEkle","Calisan",null, new { @class="btn btn-primary"})
+                <br />
+            <ul class="list-group">
+                 @foreach (var adres in Model.Adresler)
+                 {
+                      <li class="list-group-item">@adres.kisi.Ad / @adres.AdresBilgisi</li>
+                 }
+            </ul>
+         </div>
+    </div>

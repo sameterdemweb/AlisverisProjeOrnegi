@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\AspNet\AlisverisProjeOrnegi\AlisverisProje
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/AspNet/AlisverisProjeOrnegi/AlisverisProje/Views/Calisan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsaXNhblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/AspNet/AlisverisProjeOrnegi/AlisverisProje/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -85,6 +89,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/AspNet/AlisverisProjeOrnegi/AlisverisProje/Views/Guvenlik/SifreSifirlamaYap.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3V2ZW5saWtcU2lmcmVTaWZpcmxhbWFZYXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AspNet/AlisverisProjeOrnegi/AlisverisProje/Views/Guvenlik/UyelikOnaylamaYapmalisiniz.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3V2ZW5saWtcVXllbGlrT25heWxhbWFZYXBtYWxpc2luaXouY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/AspNet/AlisverisProjeOrnegi/AlisverisProje/Views/Guvenlik/UyeOl.cshtml]

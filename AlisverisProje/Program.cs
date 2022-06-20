@@ -59,10 +59,27 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 #endregion
 
+#region Session Kullanımı için Bu 'AddSession' eklemeliyiz.
+builder.Services.AddDistributedMemoryCache();  // Uygulama sunucusunun hafızasında tutulacak bir ortam tanımlanıyor.
+builder.Services.AddSession();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(10);//Süre Belirleme Yapabiliyoruz. Default ola rak 20 dk
+});
+#endregion
+
 var app = builder.Build();
 
 
+#region  Servis olarak build etmeden önce tanımladığımız session servisini aktif ediyoruz
+app.UseSession();// Build ettikten sonra session servisi entegrasyonumuzu yaptık
+#endregion
 
+#region Giriş İşlemi
+app.UseCookiePolicy();
+app.UseAuthentication();
+#endregion
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -70,18 +87,10 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
-
-#region Giriş İşlemi
-    app.UseAuthentication();
-#endregion
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

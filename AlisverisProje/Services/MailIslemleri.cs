@@ -5,7 +5,7 @@ namespace AlisverisProje.Services
     public class MailIslemleri
     {
 
-        public static void MailGonderme(string icerik, string konu)
+        public static void MailGonderme(string icerik, string konu, string gidecekMail )
         {
             SmtpClient smtp = new SmtpClient(); // smtp nesnesi oluşturuyoruz
             /*
@@ -25,7 +25,8 @@ namespace AlisverisProje.Services
             // Giden mailde görünecek e-posta adresi ve isim email adresi smtp ile aynı olmayınca hata veriyor.
             eposta.From = new MailAddress("kurs@sanalyonet.com", "Site Mesaj");
             // Mail gönderilecek kişi(ler). Eğer birden fazla kişiye gidecekse, kişiler arasına virgül koyulacak
-            eposta.To.Add("furkanozden_1998@hotmail.com, gamzearici46@gmail.com, 4973443@gmail.com, ferhat.khyaa@gmail.com,mehmet59850@gmail.com, smt.e.59@gmail.com");
+           // eposta.To.Add("furkanozden_1998@hotmail.com, gamzearici46@gmail.com, 4973443@gmail.com, ferhat.khyaa@gmail.com,mehmet59850@gmail.com, smt.e.59@gmail.com");
+            eposta.To.Add(gidecekMail);
             // eposta.CC.Add("ism3@mail3.com, isim4@mail4.com"); // Bilgi maili gönerilecek kişileri CC özelliğine ekle
             //eposta.Bcc.Add("isim5@mail5.com"); // Gizli alıcıları bcc özelliğine ekle
             eposta.Subject = konu; // Mail konusunu subject özelliğine ekle

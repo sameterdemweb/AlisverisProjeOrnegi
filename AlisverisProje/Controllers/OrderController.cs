@@ -7,14 +7,17 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AlisverisProje.Entities;
 using AlisverisProje.Models;
+using AlisverisProje.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AlisverisProje.Controllers
 {
+    [Authorize]// Class tepesine koyarsak bunu tüm mehodlarda kullanıcı girişi ister.
     public class OrderController : Controller
     {
-        private readonly AlisverisOrnekDBContext _context;
+        private readonly AppIdentityDbContext _context;
 
-        public OrderController(AlisverisOrnekDBContext context)
+        public OrderController(AppIdentityDbContext context)
         {
             _context = context;
         }
@@ -22,8 +25,8 @@ namespace AlisverisProje.Controllers
         // GET: Order
         public async Task<IActionResult> Index()
         {
-            var alisverisOrnekDBContext = _context.Orders.Include(o => o.Customer).Include(o => o.Product);
-            return View(await alisverisOrnekDBContext.ToListAsync());
+            var AppIdentityDbContext = _context.Orders.Include(o => o.Customer).Include(o => o.Product);
+            return View(await AppIdentityDbContext.ToListAsync());
         }
 
         // GET: Order/Details/5
@@ -154,7 +157,7 @@ namespace AlisverisProje.Controllers
         {
             if (_context.Orders == null)
             {
-                return Problem("Entity set 'AlisverisOrnekDBContext.Orders'  is null.");
+                return Problem("Entity set 'AppIdentityDbContext.Orders'  is null.");
             }
             var order = await _context.Orders.FindAsync(id);
             if (order != null)
