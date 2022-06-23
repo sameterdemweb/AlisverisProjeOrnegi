@@ -15,6 +15,19 @@ namespace AlisverisProje.Controllers
 
         public IActionResult Index()
         {
+            ViewData["Veri"] = "Bu bir ViewData'da taşınan veridir.";
+            ViewBag.Veri = "Bu bir ViewBag'de taşınan veridir.";
+            TempData["Veri"] = "Bu bir TempDate'da taşınan veridir.";
+
+            return View();
+        }
+
+        public ActionResult Ornek()
+        {
+            var ViewDataVeri = ViewData["Veri"];
+            var ViewBagVeri = ViewBag.Veri;
+            var TempDateVeri = TempData["Veri"];
+
             return View();
         }
 
