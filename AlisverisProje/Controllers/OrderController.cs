@@ -64,7 +64,7 @@ namespace AlisverisProje.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,CustomerId,ProductId,OrderDate")] Order order)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _context.Add(order);
                 await _context.SaveChangesAsync();

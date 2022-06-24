@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AlisverisProje.Entities
 {
@@ -11,7 +12,9 @@ namespace AlisverisProje.Entities
         public int ProductId { get; set; }
         [Display(Name = "Sipariş Tarihi")]
         public  DateTime OrderDate { get; set; }
+        [ForeignKey("CustomerId")]
         public virtual Customer Customer { get; set; } //Bir siparişin bir müşterisi olabilir mantığıyla burda müşteriyi tanımladık.
+        [ForeignKey("ProductId")]
         public virtual Product Product { get; set; } //Bir siparişin bir müşterisi olabilir mantığıyla burda müşteriyi tanımladık.
 
     }
