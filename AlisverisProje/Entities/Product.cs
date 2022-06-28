@@ -12,22 +12,23 @@ namespace AlisverisProje.Entities
         public int Id { get; set; }
         [Display(Name = "Kategori")]
 
-        [Required]
+        [Required(ErrorMessage = "Lütfen kategori seçinimi boş bırakmayın.")]
         public int CategoryId { get; set; }
         [Display(Name = "Ürün Adı")]
-        [Required]
+        [Required(ErrorMessage = "Lütfen Ürün adını boş bırakmayınız.")]
         public string ProductName { get; set; }
 
         [Display(Name = "Fiyat")]
-        [Required]
+        [Required(ErrorMessage = "Lütfen fiyat bilgisini boş bırakmayın.")]
         public decimal Price { get; set; }
         [Display(Name = "Stok Bilgisi")]
-        [Required]
+        [Required(ErrorMessage = "Lütfen stok bilgisini boş bırakmayın.")]
+
         public decimal Stock { get; set; }
 
         [ForeignKey("CategoryId")]
-        public virtual Category Category { get; set; }//Bir ürünün bir kategorisi olabilir mantığıyla burda müşteriyi tanımladık.
-        public virtual List<Order> Orders { get; set; } //Bir Ürün birden fazla siparişi olabileceği için tanımlıyoruz.
+        public virtual Category? Category { get; set; }//Bir ürünün bir kategorisi olabilir mantığıyla burda müşteriyi tanımladık.
+        public virtual List<Order>? Orders { get; set; } //Bir Ürün birden fazla siparişi olabileceği için tanımlıyoruz.
 
 
     }
