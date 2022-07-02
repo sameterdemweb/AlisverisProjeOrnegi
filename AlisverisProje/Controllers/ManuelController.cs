@@ -15,8 +15,6 @@ namespace AlisverisProje.Controllers
 
         public IActionResult Index()
         {
-          
-
             var sonucJoin = (from p in _context.Products
                              join c in _context.Categories
                              on p.CategoryId equals c.Id
