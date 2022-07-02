@@ -17,23 +17,29 @@ namespace AlisverisProje.Controllers
 
         public IActionResult Index()
         {
+            /*
             #region DataSeeder ile fake datalar oluşturma.
-           /* DataSeeder datam = new DataSeeder(_context);
-            datam.Seed();*/
-            #endregion
-          
-            
-            List<Calisanlar> calisanlar = _context.Calisanlar.ToList(); // Çalışanlar tipinde bir calisanlar listesi oluşturup ilgili tablodan çektik.
+                DataSeeder datam = new DataSeeder(_context);
+                datam.Seed();
+            #endregion*/
 
-            List<Adresler> adresler = _context.Adresler.ToList(); // Çalışanlar tipinde bir calisanlar listesi oluşturup ilgili tablodan çektik.
 
-            CalisanIndexViewModel calisanViewModel = new CalisanIndexViewModel
+            List<Calisanlar> calisanlar = _context.Calisanlar.ToList();
+
+            List<Adresler> adresler = _context.Adresler.ToList();
+
+
+            CalisanListViewModel calisanListView = new CalisanListViewModel
             {
-                Calisanlar = calisanlar,
-                Adresler=adresler
+                Calisanlar=calisanlar,
+                Adresler= adresler
+
             };
 
-            return View(calisanViewModel);
+
+            return View(calisanListView);
+
+
         }
     }
 }

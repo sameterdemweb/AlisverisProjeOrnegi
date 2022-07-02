@@ -13,14 +13,16 @@ namespace AlisverisProje.Models
 
         public void Seed()
         {
-            if (!_context.Calisanlar.Any())
+            if (_context.Calisanlar.Any())
             {
 
                 //Kişiler içeri aktarılıyor.
                 for (int i = 1; i < 11; i++)
                 {
 
-                    Calisanlar calisan = new Calisanlar() { Ad = FakeData.NameData.GetFirstName(), Soyad = FakeData.NameData.GetSurname(), Yas = FakeData.NumberData.GetNumber(10, 90) };
+                    Calisanlar calisan = new Calisanlar() { 
+                        Ad = FakeData.NameData.GetFirstName(), Soyad = FakeData.NameData.GetSurname(), 
+                        Yas = FakeData.NumberData.GetNumber(10, 90) };
                     _context.Calisanlar.Add(calisan);
                 }
                 _context.SaveChanges();
@@ -32,7 +34,9 @@ namespace AlisverisProje.Models
                 {
                     for (int i = 0; i < FakeData.NumberData.GetNumber(1,5); i++)
                     {
-                        Adresler adres = new Adresler { AdresBilgisi = FakeData.PlaceData.GetAddress(), kisi= CalisanBilgi };
+                        Adresler adres = new Adresler { 
+                            AdresBilgisi = FakeData.PlaceData.GetAddress(), 
+                            kisi= CalisanBilgi };
                         _context.Adresler.Add(adres);
                     }
                 }
