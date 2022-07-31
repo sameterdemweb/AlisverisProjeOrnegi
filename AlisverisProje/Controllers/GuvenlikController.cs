@@ -133,7 +133,7 @@ namespace AlisverisProje.Controllers
                 // /Guvenlik/MailOnayla?userId=12312.123123.1241.51251.2123&code=123128db127812badg8712gds8dg18dbgs871g
 
 
-                string MailIcerik = "Web sitemize üye olduğunuz için teşekkür ederiz. Üyelik işlemlerinizi onaylamak için ilgili linke tıklayınız. https://localhost:7130"+ DonusUrl;
+                string MailIcerik = "Web sitemize üye olduğunuz için teşekkür ederiz. Üyelik işlemlerinizi onaylamak için ilgili linke tıklayınız. https://localhost:7179"+ DonusUrl;
 
                 #region Email Gönderme işlemi yapıLAcak ve DonusUrl gönderilecek.
                 //Mail Gönderme! işlemi burada yapılacak.! // EMAİL SAĞLAYICI KULLANIMI GEREKLİ
@@ -220,7 +220,7 @@ namespace AlisverisProje.Controllers
 
             #region Email Gönderme işlemi yapıLAcak ve DonusUrl gönderilecek.
             //Mail Gönderme Kodları  // EMAİL SAĞLAYICI KULLANIMI GEREKLİ
-            string MailIcerik = "Üyelik şifrenizi sıfırlamak için ilgili linke tıklayınız. https://localhost:7130" + DonusUrl;
+            string MailIcerik = "Üyelik şifrenizi sıfırlamak için ilgili linke tıklayınız. https://localhost:7179" + DonusUrl;
 
             MailIslemleri.MailGonderme(MailIcerik, "Şifre Sıfırlama", kullanici.Email);
 

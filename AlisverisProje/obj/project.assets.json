@@ -10061,23 +10061,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Notebook\\.nuget\\packages\\": {},
+    "C:\\Users\\Samet\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AspNet\\AlisverisProjeOrnegi\\AlisverisProje\\AlisverisProje.csproj",
+      "projectUniqueName": "E:\\AspNetCoreEgitim\\AlisverisProjeOrnegi\\AlisverisProje\\AlisverisProje.csproj",
       "projectName": "AlisverisProje",
-      "projectPath": "D:\\AspNet\\AlisverisProjeOrnegi\\AlisverisProje\\AlisverisProje.csproj",
-      "packagesPath": "C:\\Users\\Notebook\\.nuget\\packages\\",
-      "outputPath": "D:\\AspNet\\AlisverisProjeOrnegi\\AlisverisProje\\obj\\",
+      "projectPath": "E:\\AspNetCoreEgitim\\AlisverisProjeOrnegi\\AlisverisProje\\AlisverisProje.csproj",
+      "packagesPath": "C:\\Users\\Samet\\.nuget\\packages\\",
+      "outputPath": "E:\\AspNetCoreEgitim\\AlisverisProjeOrnegi\\AlisverisProje\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Notebook\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Samet\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
